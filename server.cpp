@@ -13,12 +13,15 @@ struct Conn {
     std::vector<uint8_t> outgoing;
 };
 
-struct pollfd {
-    int fd;
-    short events;
-    short revents;
-};
+
 
 int main () {
     int poll (struct pollfd *fds, nfds_t nfds, int timeout);
+    std::vector<Conn *> fd2conn;
+    std::vector<struct pollfd> poll_args;
+    while (true) {
+        poll_args.clear();
+        //struct pollfd pfd = {fd, POLLIN, 0};
+        //poll_args.push_back(pfd);
+    }
 }
